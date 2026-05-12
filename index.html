@@ -1,151 +1,265 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-
+    <title>SEGA-IFRN</title>
     <style>
+        :root {
+            --primary-brown: #1104a6;
+            --secondary-brown: #0c5596;
+            --gold: #2317d4;
+            --blue: #0b5394;
+            --light-bg: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dest:Hover {
+            color: #09bde6;
+            display: inline-block;
+            transform: scale(1.10);
+            cursor: zoom-in;  
+            transition: color 0.3s; 
+            padding: 5px;       
+        }
+
         body {
-            background-color: cadetblue;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
         }
 
-        section {
-            display: flex;
-            flex-flow: row;
-            gap: 50;
-            font-size: 22px;
-            justify-content: center;
-
-        }
-        @keyframes mymove {
-        80% {box-shadow: 10px 20px 10px rgb(77, 89, 156);}
-            }
-
-        h1 {
+        header {
+            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
+            color: white;
             text-align: center;
-            font: 100;
+            padding: 4rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        div:hover {
-            background-color: rgb(55, 187, 192);
-            box-shadow: 0 10px 30px #4f7fa7;
-        }
-        li:hover {
-            background-color: rgb(60, 202, 202);
-            box-shadow: 0 10px 30px #3b86c3;
-        }
-
-        .eu {
-            margin: 40px;
-            padding: 5px;
-            border: 4px solid #6aa4d3;
-            border-radius: 50px;
-            background-color: aquamarine;
-            
-            font-size: 24px;
-            
-
+        header h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        div {
-            transition: 0.5s;
-            column-width: 300;
+        .verse-box {
+            background-color: var(--secondary-brown);
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            border-left: 5px solid var(--gold);
+            margin-top: 1rem;
+            max-width: 800px;
         }
 
-        .hobbies {
-            margin: 10px;
-            background-color: aquamarine;
-            border: 4px solid #7dbbee;
-            border-radius: 50px;
-            width: 750px;
+        .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 1rem;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
-        .container {
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            border-top: 4px solid var(--blue);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: white;
+        }
+
+        #timer {
             display: flex;
             justify-content: center;
-            background-color: #4f7fa7;
-            border-radius: 20px;
-            animation: mymove 3s infinite;
+            gap: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-brown);
         }
 
-        .musicas {
-            margin: 10px;
-            background-color: aquamarine;
-            border: 4px solid #7dbbee;
-            border-radius: 50px;
-            width: 750px;
+        .time-box {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 100px;
         }
-        a{
-            color: rgb(77, 108, 143);
+
+        .org-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, #1c74c1, #095297);
+            color: white;
         }
-        .Catalogo{
+
+        .rsvp-section {
+            padding: 4rem 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        form {
             display: flex;
-            font-size: 22px;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-            background-color: aquamarine;
-            border: 4px solid #7dbbee;
-            border-radius: 50px;
-            width: 750px;
-            align-self: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, select {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .file-upload-container {
+            text-align: left;
+            background: #fff;
+            padding: 1rem;
+            border: 1px dashed var(--blue);
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .submit {
+            padding: 1rem;
+            background-color: var(--blue);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit:hover {
+            background-color: #b88a10;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-brown);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            #timer { flex-wrap: wrap; }
+            .container { flex-direction: column; }
         }
     </style>
 </head>
-
 <body>
 
-    <div class="container">
-        <h2>Bem-vindo ao meu site</h2>
-    </div>
-    <div class="eu">
-        <h2>Sobre mim</h2>
-        <ul>
-            <li>Tenho 16 anos Nasci Dia 7 do mês De Janeiro Do ano De 2010 Tenho uma Irmãzinha de 11 Aninhos </li>
-            <li>Estou no Terceiro ano do ensino medio fazendo o Curso Integrado De Informatica ao Ensino Medio </li>
-            <li>minhas Coisas Favoritas são Gatos e Cachorrinho Por isso um furão é o melhor pet possivel ele tem toda a
-                energia De um cachorrinho e a Liquides Dos gatos O melhor dos Dois Mundos</li>
-            <li>Minha Comida é favorita Pizza Porem eu Gosto Muito de Cozinhar Principalmente Doces E Macarrão,
-                Basicamente eu Amo Comer qualquer coisa Que Eu Cozinhe </li>
-        </ul>
-    </div>
+    <header>
+        <h1>Envie Sua Atividade</h1>
+        <div class="verse-box">
+            <p>"De Preferência Digitada"<br> Comunique o Tema/Objetivo Da Sua Atividade </p>
+        </div>
+    </header>
 
-    <section>
-        <div class="musicas">
-            <h2>Minhas Musicas favoritas</h2>
-            <ol>
-                <li><a href="https://www.youtube.com/watch?v=1Kcoia22hdg" target="_blank">Tek it - Cafuné</a></li>
-                <li><a href="https://www.youtube.com/watch?v=ZVQDHFgfssM" target="_blank">Looking out For You - Joy again</li>
-                <li><a href="https://www.youtube.com/watch?v=qE9nGmMFS8w&list=RDqE9nGmMFS8w&start_radio=1" target="_blank">BabyDoll - Dominic</a></li>
-                <li><a href="https://www.youtube.com/watch?v=PmU49B8Q5sc" target="_blank">Brisa de Verão - Chrono</a></li>
-                <li><a href="https://www.youtube.com/watch?v=pKzrZDAA8sg" target="_blank">seventh Heaven - Inoha</a></li>
-            </ol>
-
-        </div>,
-        
-        <div class="hobbies">
-            <h2>Hobbies</h2>
-            <ul>
-                <li><a href="Atividades/jogos.html">Gosto de Jogos </a></li>
-                <li>Gosto de Filmes e Series</li>
-                <li>Gosto de Volei</li>
-                <li>Gosto de Gatos</li>
-                <li>Gostos De Lirios</li>
-            </ul>
+    <section class="info-section">
+        <div class="info-card">
+            <h3> Prazo Da Atividade</h3>
+            <p><strong>Dia 12/05 - Terça-feira</strong></p>
+            <p>Prazo De Entrega: <strong>18:50</strong></p>
         </div>
     </section>
-    
-    <div class="Catalogo">
-    <a href="Atividades/catalogoanimes.html"> Catalogo De Animes Que Eu Recomendo </a>
-    </div>
- 
-    <h1>Atividade Para Integrar JavaScript</h1> 
-<div class="Catalogo">
-    <a href="Atividades/Form.html"> Integração Em Html </a>
-    </div>
-</body>
 
+    <section class="countdown-section">
+        <h2>Envie Em Até:</h2>
+        <div id="timer">
+            <div class="time-box" id="days">00<span>Dias</span></div>
+            <div class="time-box" id="hours">00<span>Horas</span></div>
+            <div class="time-box" id="minutes">00<span>Minutos</span></div>
+            <div class="time-box" id="seconds">00<span>Segundos</span></div>
+        </div>
+    </section>
+
+    <section class="org-section">
+        <h2>Organização</h2>
+        <p><strong>Instituto Federal do Rio Grande do Norte (IFRN)</strong></p>
+    </section>
+
+    <section class="rsvp-section">
+        <h2>Área De Envio</h2>
+        <p style="margin-bottom: 20px;">Preencha os dados e anexe sua atividade abaixo:</p>
+        
+       <form action="https://formcarry.com/s/GWlYFqXt6Ux" method="POST" enctype="multipart/form-data">
+    
+    <input type="text" name="Nome_Completo" placeholder="Seu Nome Completo" required>
+    
+    <div class="container" style="display: flex; gap: 10px;">
+        <input type="text" name="Matricula" placeholder="Nº da Matrícula" required> 
+        <select name="Turma" required>
+            <option value="" disabled selected>Sua Turma</option>
+            <option value="3 Informatica">3º Informática (Os Melhores)</option>
+            <option value="3 Automacao">3º Automação</option>
+            <option value="3 EletroMecanica">3º EletroMecanica</option>
+            <option value="3 Edificacoes">3º Edificacoes</option>
+            <option value="3 ControleAmbiental">3º Controle Ambiental</option>
+            <option disabled>└─ Por que entrou nesse curso? Não tinha nada melhor?</option>
+        </select>
+    </div> 
+
+    <input type="text" name="tema" placeholder="Tema Da Sua Atividade" required>
+
+    <div class="file-upload-container">
+        <label>Anexe a Atividade:</label>
+        <input type="file" name="Arquivo_Atividade" required>
+    </div>
+
+    <button type="submit" class="submit">Enviar Atividade Agora</button>
+</form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 IFRN | Direção : Diogo Alvino</p>
+    </footer>
+
+    <script>
+        const countDownDate = new Date("May 12, 2026 18:50:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days + "<span> Dias</span>";
+            document.getElementById("hours").innerHTML = hours + "<span> Horas</span>";
+            document.getElementById("minutes").innerHTML = minutes + "<span> Minutos</span>";
+            document.getElementById("seconds").innerHTML = seconds + "<span> Segundos</span>";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "<h2>Prazo encerrado!</h2>";
+            }
+        }, 1000);
+    </script>
+</body>
 </html>
