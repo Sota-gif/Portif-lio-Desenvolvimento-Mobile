@@ -1,265 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEGA-IFRN</title>
+    <title>Document</title>
     <style>
-        :root {
-            --primary-brown: #1104a6;
-            --secondary-brown: #0c5596;
-            --gold: #2317d4;
-            --blue: #0b5394;
-            --light-bg: #f9f9f9;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .dest:Hover {
-            color: #09bde6;
-            display: inline-block;
-            transform: scale(1.10);
-            cursor: zoom-in;  
-            transition: color 0.3s; 
-            padding: 5px;       
-        }
-
         body {
-            background-color: var(--light-bg);
-            color: #333;
-            line-height: 1.6;
+            background-color: rgb(179, 154, 126);
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .verse-box {
-            background-color: var(--secondary-brown);
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            border-left: 5px solid var(--gold);
-            margin-top: 1rem;
-            max-width: 800px;
-        }
-
-        .info-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            padding: 3rem 1rem;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-            border-top: 4px solid var(--blue);
-            transition: transform 0.3s ease;
-        }
-
-        .countdown-section {
-            text-align: center;
-            padding: 3rem 1rem;
-            background-color: white;
-        }
-
-        #timer {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--secondary-brown);
-        }
-
-        .time-box {
-            background: var(--light-bg);
-            padding: 1rem;
-            border-radius: 8px;
-            min-width: 100px;
-        }
-
-        .org-section {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(to right, #1c74c1, #095297);
-            color: white;
-        }
-
-        .rsvp-section {
-            padding: 4rem 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        input, select {
-            padding: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
+        .container {
+            height: 100%;
             width: 100%;
         }
 
-        .file-upload-container {
-            text-align: left;
-            background: #fff;
-            padding: 1rem;
-            border: 1px dashed var(--blue);
-            border-radius: 5px;
-            margin-top: 10px;
+        .header {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
         }
 
-        .submit {
-            padding: 1rem;
-            background-color: var(--blue);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit:hover {
-            background-color: #b88a10;
-        }
-
-        footer {
+        .Titulo {
+            width: 95%;
+            background-color: rgb(231, 192, 148);
             text-align: center;
-            padding: 2rem;
-            background-color: var(--primary-brown);
-            color: white;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            #timer { flex-wrap: wrap; }
-            .container { flex-direction: column; }
+        .H1 {
+            color: rgb(129, 73, 21);
+            padding-top: 10px;
+            font-style: italic;
+        }
+
+        .H3 {
+            padding-bottom: 15px;
+        }
+
+
+        .IMC {
+            background-color: rgb(216, 184, 148);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+       
+
+        .FotoImc {
+            border: 3px;
+            border-color: rgb(143, 177, 240);
+        }
+
+        .FotoCalorias {
+            border: 3px;
+            border-color: rgb(133, 199, 243);
+        }
+
+        .imgCortisol {
+            border-radius: 15px;
+            max-width: 1000px;
+            min-width: 100px;
+        }
+
+        .imgCaloria {
+            border-radius: 15px;
+            max-width: 1000px;
+            min-width: 100px;
+        }
+
+        .azul {
+            color: rgb(0, 140, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .verde {
+            color: rgb(128, 255, 0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .amarelo {
+            color: rgb(255, 255, 0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .laranja {
+            color: rgb(255, 115, 0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .vermelho {
+            color: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sendo {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .k {
+            background-color: rgb(228, 196, 159);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .Container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dest:Hover {
+            color: #265189;
+            display: inline-block;
+            transform: scale(1.25);
+            cursor: zoom-in;
+            background-color: rgb(220, 236, 236);
+            transition: color 0.3s;
+            border-radius: 7px;
+        }
+
+        .desta {
+            color: #265189;
+        }
+
+        .deste {
+            color: #265189;
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Envie Sua Atividade</h1>
-        <div class="verse-box">
-            <p>"De Preferência Digitada"<br> Comunique o Tema/Objetivo Da Sua Atividade </p>
+    <div class="container">
+        <div class="header">
+            <div class="Titulo">
+                <h1 class="H1">SASFI</h1>
+                <h3 class="H3">Sistema De Apoio A Saúde Fisica</h3>
+            </div>
         </div>
-    </header>
 
-    <section class="info-section">
-        <div class="info-card">
-            <h3> Prazo Da Atividade</h3>
-            <p><strong>Dia 12/05 - Terça-feira</strong></p>
-            <p>Prazo De Entrega: <strong>18:50</strong></p>
+        <div class="IMC">
+            <div class="FotoImc">
+                <img class="imgCortisol" src="Imgs/IMC.png">
+            </div>
+            <div class="text">
+                <h2>
+                    <a class="deste" href="CalculadoraDeIMC.html" target="_blank">
+                        Calcule Seu Imc
+                    </a>
+                </h2>
+                <p>O IMC (Índice de Massa Corporal) é um cálculo internacional utilizado para avaliar se uma pessoa está
+                    dentro do seu peso ideal, com sobrepeso ou abaixo do peso, com base na relação entre sua altura e
+                    massa
+                    corporal.
+                </p>
+                <h2 class="sendo">Sendo:</h2>
+                <p class="azul">o Azul abaixo do peso <18.5< /p>
+                        <p class="verde">o Verde normal 18.5 a 24.9</p>
+                        <p class="amarelo">o Amarelo sobrepeso 25.0 a 29.9</p>
+                        <p class="laranja">o Laranja obesidade 30.0 a 39.9</p>
+                            <p class="vermelho">o Vermelho obesidade Severa > ou = 40.0</p>
+                            <H5><a class="desta" href="CalculadoraDeIMC.html"> Clique Aqui Ou no Titulo Para Ir A Pagina
+                                </a></H5>
+            </div>
         </div>
-    </section>
 
-    <section class="countdown-section">
-        <h2>Envie Em Até:</h2>
-        <div id="timer">
-            <div class="time-box" id="days">00<span>Dias</span></div>
-            <div class="time-box" id="hours">00<span>Horas</span></div>
-            <div class="time-box" id="minutes">00<span>Minutos</span></div>
-            <div class="time-box" id="seconds">00<span>Segundos</span></div>
+
+
+        <div class="k">
+            <div class="FotoCalorias">
+                <img class="imgCaloria" src="Imgs/kcal.png">
+            </div>
+            <div class="text">
+                <h2><a class="deste" href="PI.html"> Calorias Perdidas </a></h2>
+                <p>Após uma Corrida oa Caminhada Acesse Essa Pagina E digite As Informacões Pedidas Para Receber Uma
+                    Estimativa De Quantas Calorias Você Perdeu No Trajeto</p>
+                <H5><a class="desta" href="PI.html">Clique Aqui Ou no Titulo Para Ir A Pagina </a></H5>
+            </div>
         </div>
-    </section>
-
-    <section class="org-section">
-        <h2>Organização</h2>
-        <p><strong>Instituto Federal do Rio Grande do Norte (IFRN)</strong></p>
-    </section>
-
-    <section class="rsvp-section">
-        <h2>Área De Envio</h2>
-        <p style="margin-bottom: 20px;">Preencha os dados e anexe sua atividade abaixo:</p>
-        
-       <form action="https://formcarry.com/s/GWlYFqXt6Ux" method="POST" enctype="multipart/form-data">
-    
-    <input type="text" name="Nome_Completo" placeholder="Seu Nome Completo" required>
-    
-    <div class="container" style="display: flex; gap: 10px;">
-        <input type="text" name="Matricula" placeholder="Nº da Matrícula" required> 
-        <select name="Turma" required>
-            <option value="" disabled selected>Sua Turma</option>
-            <option value="3 Informatica">3º Informática (Os Melhores)</option>
-            <option value="3 Automacao">3º Automação</option>
-            <option value="3 EletroMecanica">3º EletroMecanica</option>
-            <option value="3 Edificacoes">3º Edificacoes</option>
-            <option value="3 ControleAmbiental">3º Controle Ambiental</option>
-            <option disabled>└─ Por que entrou nesse curso? Não tinha nada melhor?</option>
-        </select>
-    </div> 
-
-    <input type="text" name="tema" placeholder="Tema Da Sua Atividade" required>
-
-    <div class="file-upload-container">
-        <label>Anexe a Atividade:</label>
-        <input type="file" name="Arquivo_Atividade" required>
     </div>
-
-    <button type="submit" class="submit">Enviar Atividade Agora</button>
-</form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 IFRN | Direção : Diogo Alvino</p>
-    </footer>
-
-    <script>
-        const countDownDate = new Date("May 12, 2026 18:50:00").getTime();
-        const x = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days + "<span> Dias</span>";
-            document.getElementById("hours").innerHTML = hours + "<span> Horas</span>";
-            document.getElementById("minutes").innerHTML = minutes + "<span> Minutos</span>";
-            document.getElementById("seconds").innerHTML = seconds + "<span> Segundos</span>";
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "<h2>Prazo encerrado!</h2>";
-            }
-        }, 1000);
-    </script>
 </body>
+
 </html>
