@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Atividades - Modo Pro</title>
+  <style>
+    body { 
+      font-family: sans-serif; 
+      padding: 20px;
+      max-width: 800px; 
+      margin: auto; 
+      background-color: #76e0cb;
+    }
+    .container {
+      background: rgb(139, 211, 223);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(4, 63, 9, 0.1);
+    }
+    h2 { color: #333; text-align: center; }
+    
+    input, button { 
+      display: block;
+      margin: 10px 0; 
+      padding: 12px; 
+      width: 100%; 
+      box-sizing: border-box; 
+      border-radius: 6px;
+      border: 1px solid #69a8b8;
+    }
+    
+    button { 
+      cursor: pointer; 
+      background: #7c9bb8; 
+      color: rgb(84, 207, 191); 
+      border: none; 
+      font-weight: bold;
+    }
+    
+    button:hover { background: #82b1cf; }
+
+    table { 
+      width: 100%; 
+      border-collapse: collapse;
+      margin-top: 15px; 
+    }
+    
+    th, td { 
+      border: 1px solid #b4ffda; 
+      padding: 12px; 
+      text-align: center; 
+    }
+    
+    th { background-color: #91ebe3; }
+
+    .secao {
+      margin-bottom: 20px; 
+      padding: 15px;
+      border: 1px solid #627892;
+      border-radius: 8px;
+    }
+
+    .volte {
+      margin-top: 20px;
+      text-align: center;
+      background-color: cadetblue;
+      padding: 15px;
+      border-radius: 15px;
+    }
+
+    .volte a {
+      text-decoration: none;
+      color: rgb(209, 253, 212);
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .desta:hover {
+      transform: scale(1.1);
+      color: #063066;
+    }
+
+    .resumo-hoje {
+      font-size: 1.2rem;
+      color: #5daa6f;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registro de Atividades</h2>
+
+  <div class="secao">
+    <h3>Nova Atividade</h3>
+    <input type="number" id="distancia" placeholder="Distância (km)">
+    <input type="number" id="tempo" placeholder="Tempo (minutos)">
+    <button onclick="registrarAtividade()">Registrar Atividade</button>
+  </div>
+
+  <div class="secao">
+    <button onclick="mostrarCalorias()">Calcular Total de Hoje</button>
+    <p id="resultadoCalorias" class="resumo-hoje"></p>
+  </div>
+
+  <div class="secao">
+    <button onclick="mostrarEvolucao()">Ver Histórico Completo</button>
+    <div id="evolucao"></div>
+  </div>
+
+  <div class="volte">
+    <a class="desta" href="PaginaPrincipal.html">Voltar Para A Página Inicial</a>
+  </div>
+</div>
+
+<script>
+  const pesoUsuario = 70; // Peso base em kg
+  let atividades = JSON.parse(localStorage.getItem('atividades_v2')) || [];
+
+  function registrarAtividade() {
+    const distInput = document.getElementById('distancia').value;
+    const tempoInput = document.getElementById('tempo').value;
+    
+    const distancia = parseFloat(distInput);
+    const tempo = parseFloat(tempoInput);
+
+    if (distancia > 0 && tempo > 0) {
+      const velocidade = distancia / (tempo / 60);
+      
+      let MET;
+      if (velocidade <= 6) MET = 4;        
+      else if (velocidade <= 12) MET = 10; 
+      else if (velocidade <= 20) MET = 16; 
+      else MET = velocidade * 0.8;         
+
+      const horas = tempo / 60;
+      const calorias = Math.round(MET * pesoUsuario * horas);
+
+      const hoje = new Date().toLocaleDateString('pt-BR');
+      
+      atividades.push({ 
+        data: hoje, 
+        distancia: distancia, 
+        tempo: tempo, 
+        calorias: calorias 
+      });
+
+      localStorage.setItem('atividades_v2', JSON.stringify(atividades));
+      alert(`Registrado! Gasto estimado: ${calorias.toLocaleString('pt-BR')} kcal`);
+      
+      document.getElementById('distancia').value = '';
+      document.getElementById('tempo').value = '';
+      if(document.getElementById('evolucao').innerHTML !== "") mostrarEvolucao();
+    } else {
+      alert('Por favor, insira números válidos.');
+    }
+  }
+
+  function mostrarCalorias() {
+    const hoje = new Date().toLocaleDateString('pt-BR');
+    const total = atividades
+      .filter(a => a.data === hoje)
+      .reduce((sum, a) => sum + a.calorias, 0);
+
+    document.getElementById('resultadoCalorias').innerText = `Total Hoje: ${total.toLocaleString('pt-BR')} kcal`;
+  }
+
+  function mostrarEvolucao() {
+    if (atividades.length === 0) {
+      document.getElementById('evolucao').innerHTML = '<p style="text-align:center;">Nenhuma atividade salva.</p>';
+      return;
+    }
+
+    let html = `<table>
+      <tr>
+        <th>Data</th>
+        <th>Km</th>
+        <th>Min</th>
+        <th>kcal</th>
+      </tr>`;
+
+    atividades.slice().reverse().forEach(a => {
+      html += `<tr>
+        <td>${a.data}</td>
+        <td>${a.distancia.toLocaleString('pt-BR')}</td>
+        <td>${a.tempo.toLocaleString('pt-BR')}</td>
+        <td><strong>${a.calorias.toLocaleString('pt-BR')}</strong></td>
+      </tr>`;
+    });
+
+    html += '</table>';
+    html += '<button onclick="limparDados()" style="background:#d9534f; margin-top:10px;">Limpar Tudo</button>';
+    document.getElementById('evolucao').innerHTML = html;
+  }
+
+  function limparDados() {
+    if(confirm("Deseja apagar todo o histórico?")) {
+      atividades = [];
+      localStorage.removeItem('atividades_v2');
+      mostrarEvolucao();
+      document.getElementById('resultadoCalorias').innerText = "";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #ddba8d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .secao {
+            background: rgb(255, 220, 180);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 4000px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #f3c9a7;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .botoes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .btn-calc {
+            background-color: #a17543;
+            color: rgb(226, 192, 147);
+        }
+
+        .btn-voltar {
+            background-color: #a17543;
+            border: 1px solid rgb(226, 192, 147);
+            padding: 0;
+        }
+
+        .btn-voltar a {
+            text-decoration: none;
+            color: #d3ae95;
+            display: block;
+            padding: 14px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (min-width: 480px) {
+            .secao {
+                padding: 2.5rem;
+            }
+
+            .botoes-container {
+                flex-direction: row;
+            }
+
+            button {
+                padding: 12px;
+            }
+
+            .btn-voltar a {
+                padding: 12px;
+            }
+
+            .genero {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="secao">
+        <h3>Calculadora de IMC</h3>
+        <p>Qual Seu Gênero?</p>
+        <div class="genero">
+            <button>Masculino</button>
+            <button>Feminino</button>
+        </div>
+        <p>Qual Sua Idade?</p>
+        <input type="number" placeholder="Exemplo = 35 anos">
+        <p>Qual Sua Altura?</p>
+        <input type="number" id="peso" placeholder="Exemplo = 70 KG" step="0.1">
+        <p>Qual Seu Peso?</p>
+        <input type="number" id="altura" placeholder="Exemplo = 1,70 Metros" step="0.01">
+
+        <div class="botoes-container">
+            <button class="btn-calc" onclick="Calcular()">Calcular</button>
+            <button class="btn-voltar"><a href="PaginaPrincipal.html">Voltar</a></button>
+        </div>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function Calcular() {
+            const altInput = document.getElementById('altura').value;
+            const pesoInput = document.getElementById('peso').value;
+            const peso = parseFloat(pesoInput);
+            const altura = parseFloat(altInput);
+            const elementoResultado = document.getElementById('resultado');
+
+            if (!peso || !altura || altura <= 0) {
+                elementoResultado.innerText = "Valores inválidos";
+                elementoResultado.style.color = "black";
+                return;
+            }
+
+            const imc = peso / (altura * altura);
+            const imcFormatado = imc.toFixed(2);
+            let classificacao = "";
+            let cor = "";
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+                cor = "#e67e22";
+            } else if (imc < 25) {
+                classificacao = "Peso normal";
+                cor = "#27ae60";
+            } else if (imc < 30) {
+                classificacao = "Sobrepeso";
+                cor = "#f1c40f";
+            } else if (imc < 40) {
+                classificacao = "Obesidade";
+                cor = "#e74c3c";
+            } else {
+                classificacao = "Obesidade Extrema";
+                cor = "#c0392b";
+            }
+
+            elementoResultado.innerText = `IMC: ${imcFormatado}\n(${classificacao})`;
+            elementoResultado.style.color = cor;
+        }
+    </script>
+</body>
+
+</html>

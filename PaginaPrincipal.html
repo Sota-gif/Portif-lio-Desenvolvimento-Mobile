@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(179, 154, 126);
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .Titulo {
+            width: 95%;
+            background-color: rgb(231, 192, 148);
+            text-align: center;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .H1 {
+            color: rgb(129, 73, 21);
+            padding-top: 10px;
+            font-style: italic;
+        }
+
+        .H3 {
+            padding-bottom: 15px;
+        }
+
+
+        .IMC {
+            background-color: rgb(216, 184, 148);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+       
+
+        .FotoImc {
+            border: 3px;
+            border-color: rgb(143, 177, 240);
+        }
+
+        .FotoCalorias {
+            border: 3px;
+            border-color: rgb(133, 199, 243);
+        }
+
+        .imgCortisol {
+            border-radius: 15px;
+            max-width: 1000px;
+            min-width: 100px;
+        }
+
+        .imgCaloria {
+            border-radius: 15px;
+            max-width: 1000px;
+            min-width: 100px;
+        }
+
+        .azul {
+            color: rgb(0, 140, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .verde {
+            color: rgb(128, 255, 0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .amarelo {
+            color: rgb(255, 255, 0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .laranja {
+            color: rgb(255, 115, 0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .vermelho {
+            color: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sendo {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .k {
+            background-color: rgb(228, 196, 159);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .Container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dest:Hover {
+            color: #265189;
+            display: inline-block;
+            transform: scale(1.25);
+            cursor: zoom-in;
+            background-color: rgb(220, 236, 236);
+            transition: color 0.3s;
+            border-radius: 7px;
+        }
+
+        .desta {
+            color: #265189;
+        }
+
+        .deste {
+            color: #265189;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="Titulo">
+                <h1 class="H1">SASFI</h1>
+                <h3 class="H3">Sistema De Apoio A Saúde Fisica</h3>
+            </div>
+        </div>
+
+        <div class="IMC">
+            <div class="FotoImc">
+                <img class="imgCortisol" src="Imgs/IMC.png">
+            </div>
+            <div class="text">
+                <h2>
+                    <a class="deste" href="CalculadoraDeIMC.html" target="_blank">
+                        Calcule Seu Imc
+                    </a>
+                </h2>
+                <p>O IMC (Índice de Massa Corporal) é um cálculo internacional utilizado para avaliar se uma pessoa está
+                    dentro do seu peso ideal, com sobrepeso ou abaixo do peso, com base na relação entre sua altura e
+                    massa
+                    corporal.
+                </p>
+                <h2 class="sendo">Sendo:</h2>
+                <p class="azul">o Azul abaixo do peso <18.5< /p>
+                        <p class="verde">o Verde normal 18.5 a 24.9</p>
+                        <p class="amarelo">o Amarelo sobrepeso 25.0 a 29.9</p>
+                        <p class="laranja">o Laranja obesidade 30.0 a 39.9</p>
+                            <p class="vermelho">o Vermelho obesidade Severa > ou = 40.0</p>
+                            <H5><a class="desta" href="CalculadoraDeIMC.html"> Clique Aqui Ou no Titulo Para Ir A Pagina
+                                </a></H5>
+            </div>
+        </div>
+
+
+
+        <div class="k">
+            <div class="FotoCalorias">
+                <img class="imgCaloria" src="Imgs/kcal.png">
+            </div>
+            <div class="text">
+                <h2><a class="deste" href="PI.html"> Calorias Perdidas </a></h2>
+                <p>Após uma Corrida oa Caminhada Acesse Essa Pagina E digite As Informacões Pedidas Para Receber Uma
+                    Estimativa De Quantas Calorias Você Perdeu No Trajeto</p>
+                <H5><a class="desta" href="PI.html">Clique Aqui Ou no Titulo Para Ir A Pagina </a></H5>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
