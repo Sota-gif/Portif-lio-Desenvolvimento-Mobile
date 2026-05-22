@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,7 @@
             display: flex;
             align-items: center;
             flex-direction: column;
+            transition: transform 0.3s ease;
         }
 
         .Titulo {
@@ -41,17 +42,9 @@
         }
 
 
-        .IMC {
-            background-color: rgb(228, 196, 159);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-radius: 15px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
 
-       
+
+
 
         .FotoImc {
             border: 3px;
@@ -118,6 +111,7 @@
             border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
         .Container {
@@ -142,27 +136,111 @@
         .deste {
             color: #265189;
         }
-        .inf{
+
+        .inf {
             color: rgb(116, 62, 18);
+            background-color: rgb(228, 196, 159);
+            border-radius: 1%;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 5%;
+            margin-right: 5%;
         }
-        .size{
+
+        .size {
             size: 40px;
             padding: 0;
             margin: 0;
         }
-        .botaoContent{
+
+        .botaoContent {
             justify-content: center;
             display: flex;
             align-items: center;
-           
+
         }
-        .botao{
+
+        .botao {
             background-color: antiquewhite;
             border-radius: 15px;
             color-scheme: inherit;
             border-color: rgb(253, 178, 87);
             padding: 5px;
-            color: coral; 
+            color: coral;
+        }
+
+        .IMC {
+            background-color: rgb(228, 196, 159);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .IMC:hover {
+            transform: translateY(-5px);
+        }
+
+        .Cur {
+            background-color: rgb(228, 196, 159);
+            display: flex;
+            align-items: center;
+            border-radius: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-color: brown;
+            transition: transform 0.3s ease;
+        }
+
+        .Cur:hover {
+            transform: translateY(-5px);
+            color: black;
+            background-color: rgb(220, 114, 34);
+            zoom: 115%;
+        }
+
+        .k:hover {
+            transform: translateY(-5px);
+        }
+
+        .header:hover {
+            transform: translate3d(0px, 10px, 0px);
+            zoom: 110%;
+        }
+
+        .k {
+            background-color: rgb(228, 196, 159);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .Titulo span {
+            color: hsl(29, 86%, 43%);
+            animation: mudaCor 3.0s infinite linear;
+            animation-delay: calc(var(--i) * 0.4s);
+        }
+
+        @keyframes mudaCor {
+
+            0%,
+            100% {
+                color: coral;
+            }
+
+            50% {
+                color: #72378a;
+
+            }
         }
     </style>
 </head>
@@ -172,7 +250,13 @@
     <div class="container">
         <div class="header">
             <div class="Titulo">
-                <h1 class="H1">SASFI</h1>
+                <h1 class="H1">
+                    <span class="--i:1">S</span>
+                    <span class="--i:2">A</span>
+                    <span class="--i:3">S</spa>
+                        <span class="--i:4">F</span>
+                        <span class="--i:5">I</span>
+                </h1>
                 <h3 class="H3">Sistema De Apoio A Saúde Fisica</h3>
             </div>
         </div>
@@ -197,9 +281,9 @@
                         <p class="verde">o Verde normal 18.5 a 24.9</p>
                         <p class="amarelo">o Amarelo sobrepeso 25.0 a 29.9</p>
                         <p class="laranja">o Laranja obesidade 30.0 a 39.9</p>
-                            <p class="vermelho">o Vermelho obesidade Severa > ou = 40.0</p>
-                            <H5><a class="desta" href="CalculadoraDeIMC.html"> Clique Aqui Ou no Titulo Para Ir A Pagina
-                                </a></H5>
+                        <p class="vermelho">o Vermelho obesidade Severa > ou = 40.0</p>
+                        <H5><a class="desta" href="CalculadoraDeIMC.html"> Clique Aqui Ou no Titulo Para Ir A Pagina
+                            </a></H5>
             </div>
         </div>
 
@@ -218,21 +302,56 @@
         </div>
     </div>
 
+
     <div class="inf">
-        <p>
+        <div class="ToSemCriatividade">
+
             <h1>Curiosidades</h1>
-            <h3> corpo humano é uma máquina cheia de processos surpreendentes. Aqui estão algumas curiosidades fascinantes sobre o funcionamento e os limites da nossa saúde física:</h3>
-            <p class="size">Músculo mais forte:</p> O masseter, responsável pela mastigação, é o músculo mais forte do corpo humano em relação ao seu peso, conseguindo exercer uma força de até 90 kg.
-            <br><p class="size">Caminhada longa:</p> Uma pessoa média dá cerca de 7.500 passos por dia. Se mantiver essa média até os 80 anos, terá caminhado o equivalente a quatro voltas completas ao redor da Terra.
-            <br><p class="size">Produção de saliva:</p> O corpo produz cerca de 1 a 1,5 litro de saliva por dia, o que ajuda na digestão e protege os dentes contra infecções.
-            <br><p class="size">Cérebro ativo:</p> O cérebro consome cerca de 20% de toda a energia e oxigênio que o corpo produz, apesar de representar apenas 2% do peso corporal total.
-            <br><p class="size">Coração incansável:</p> O coração bate cerca de 100 mil vezes por dia e bombeia sangue suficiente para encher um caminhão-tanque de tamanho médio a cada ano.
-            <br><p class="size">Ossos de aço: </p>Grama por grama, o osso humano é mais forte que o aço. Um bloco de osso do tamanho de uma caixa de fósforos pode suportar até 9 toneladas de peso.
-            <br><p class="size">Renovação da pele: </p>O corpo descama cerca de 30 mil a 40 mil células mortas da pele por minuto. Isso significa que você ganha uma "pele nova" a cada 28 dias.</p>
+            <div class="Cur">
+                <h3> corpo humano é uma máquina cheia de processos surpreendentes. Aqui estão algumas curiosidades
+                    fascinantes
+                    sobre o funcionamento e os limites da nossa saúde física:</h3>
+            </div>
+            <div class="Cur">
+                <p>Músculo mais forte: O masseter, responsável pela mastigação, é o músculo mais forte do corpo
+                    humano em relação ao seu peso, conseguindo exercer uma força de até 90 kg.</p>
+            </div>
+
+            <div class="Cur">
+                <p>Caminhada longa: Uma pessoa média dá cerca de 7.500 passos por dia. Se mantiver essa média
+                    até os 80 anos, terá caminhado o equivalente a quatro voltas completas ao redor da Terra</p>
+            </div>
+
+            <div class="Cur">
+                <p>Produção de saliva: O corpo produz cerca de 1 a 1,5 litro de saliva por dia, o que ajuda na
+                    digestão e protege os dentes contra infecções.</p>
+            </div>
+
+            <div class="Cur">
+                <p>Cérebro ativo: O cérebro consome cerca de 20% de toda a energia e oxigênio que o corpo
+                    produz, apesar de representar apenas 2% do peso corporal total.</p>
+            </div>
+
+            <div class="Cur">
+                <p>Coração incansável: O coração bate cerca de 100 mil vezes por dia e bombeia sangue
+                    suficiente para encher um caminhão-tanque de tamanho médio a cada ano.</p>
+            </div>
+
+            <div class="Cur">
+                <p>Ossos de aço: Grama por grama, o osso humano é mais forte que o aço. Um bloco de osso do
+                    tamanho de uma caixa de fósforos pode suportar até 9 toneladas de peso.</p>
+            </div>
+
+            <div class="Cur">
+                <p>Renovação da pele:O corpo descama cerca de 30 mil a 40 mil células mortas da pele por
+                    minuto. Isso significa que você ganha uma "pele nova" a cada 28 dias.</p>
+            </div>
+        </div>
     </div>
 
     <div class="botaoContent">
-    <button class="botao"><a class="botao" href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil" target="_blank">Clique Aqui Para Mais Dicas De Saúde</a> </button>
+        <button class="botao"><a class="botao" href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil"
+                target="_blank">Clique Aqui Para Mais Dicas De Saúde</a> </button>
     </div>
 </body>
 
