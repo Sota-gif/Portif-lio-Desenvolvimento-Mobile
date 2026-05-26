@@ -41,11 +41,6 @@
             padding-bottom: 15px;
         }
 
-
-
-
-
-
         .FotoImc {
             border: 3px;
             border-color: rgb(143, 177, 240);
@@ -141,12 +136,12 @@
             color: rgb(116, 62, 18);
             background-color: rgb(228, 196, 159);
             border-radius: 1%;
-            width: 90%;
+            width: 95%;
             display: flex;
             align-items: center;
             flex-direction: column;
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
         }
 
         .size {
@@ -159,16 +154,43 @@
             justify-content: center;
             display: flex;
             align-items: center;
+            height: 100px;
+        }
 
+        .botaoContent {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding: 20px;
         }
 
         .botao {
             background-color: antiquewhite;
             border-radius: 15px;
-            color-scheme: inherit;
-            border-color: rgb(253, 178, 87);
-            padding: 5px;
+            border: 2px solid rgb(253, 178, 87);
+            padding: 12px 28px;
             color: coral;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(253, 178, 87, 0.1);
+            text-align: center;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .botao:hover {
+            background-color: coral;
+            color: antiquewhite;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(253, 178, 87, 0.25);
+        }
+
+        .botao:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(253, 178, 87, 0.15);
         }
 
         .IMC {
@@ -179,6 +201,8 @@
             border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 20px;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
             transition: transform 0.3s ease;
         }
 
@@ -194,13 +218,13 @@
             margin-top: 5px;
             margin-bottom: 5px;
             border-color: brown;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .Cur:hover {
             transform: translateY(-5px);
-            color: black;
-            background-color: rgb(220, 114, 34);
+            color: rgb(90, 50, 26);
+            background-color: rgb(211, 179, 143);
             zoom: 115%;
         }
 
@@ -221,6 +245,8 @@
             border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 20px;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
             transition: transform 0.3s ease;
         }
 
@@ -229,18 +255,15 @@
             animation: mudaCor 3.0s infinite linear;
             animation-delay: calc(var(--i) * 0.4s);
         }
+        .botao span {
+            color: hsl(29, 86%, 43%);
+            animation: mudaCor 3.0s infinite linear;
+            animation-delay: calc(var(--i) * 0.4s);
+        }
 
         @keyframes mudaCor {
-
-            0%,
-            100% {
-                color: coral;
-            }
-
-            50% {
-                color: #72378a;
-
-            }
+            0%, 100% { color: coral; }
+            50% { color: #72378a; }
         }
     </style>
 </head>
@@ -350,8 +373,16 @@
     </div>
 
     <div class="botaoContent">
-        <button class="botao"><a class="botao" href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil"
-                target="_blank">Clique Aqui Para Mais Dicas De Saúde</a> </button>
+        <a class="botao" href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil" target="_blank">
+            <span class="--i:1">Clique</span> 
+            <span class="--i:2">Aqui </span>
+            <span class="--i:3">Para </span> 
+            <span class="--i:4">Mais</span>
+            <span class="--i:5">Dicas </span>
+            <span class="--i:6">De</span> 
+            <span class="--i:7">Saúde</span>
+        </a>
+    </div>
     </div>
 </body>
 
