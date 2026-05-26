@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         body {
-            background-color: rgb(179, 154, 126);
+            background-color: #9cd1df;
         }
 
         .container {
@@ -24,7 +24,7 @@
 
         .Titulo {
             width: 95%;
-            background-color: rgb(231, 192, 148);
+            background-color: #15535d;
             text-align: center;
             border-radius: 15px;
             justify-content: center;
@@ -32,14 +32,17 @@
         }
 
         .H1 {
-            color: rgb(129, 73, 21);
+            color: rgb(255, 255, 255);
             padding-top: 10px;
             font-style: italic;
         }
 
         .H3 {
             padding-bottom: 15px;
+            color: #F5F7FA;
         }
+
+
 
         .FotoImc {
             border: 3px;
@@ -70,13 +73,13 @@
         }
 
         .verde {
-            color: rgb(17, 255, 0);
+            color: rgb(18, 192, 6);
             margin: 0;
             padding: 0;
         }
 
         .amarelo {
-            color: rgb(255, 255, 0);
+            color: rgb(230, 230, 6);
             margin: 0;
             padding: 0;
         }
@@ -107,6 +110,8 @@
             margin-top: 20px;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
+            margin-right: 2.5%;
+            margin-left: 2.5%;
         }
 
         .Container {
@@ -125,16 +130,16 @@
         }
 
         .desta {
-            color: #265189;
+            color: #1d93a5;
         }
 
         .deste {
-            color: #265189;
+            color: #15535d;
         }
 
         .inf {
-            color: rgb(116, 62, 18);
-            background-color: rgb(228, 196, 159);
+            color: #15535d;
+            background-color:#caf8ff;
             border-radius: 1%;
             width: 95%;
             display: flex;
@@ -154,22 +159,23 @@
             justify-content: center;
             display: flex;
             align-items: center;
-            height: 100px;
-        }
-
-        .botaoContent {
-            justify-content: center;
-            display: flex;
-            align-items: center;
             padding: 20px;
         }
 
-        .botao {
-            background-color: antiquewhite;
+          .botao:hover {
+            background-color: rgb(100, 193, 216);
+            color: rgb(31, 81, 104);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(253, 178, 87, 0.25);
+        }
+
+         .botao {
+            background-color: rgb(111, 173, 192);
             border-radius: 15px;
-            border: 2px solid rgb(253, 178, 87);
+            border: 2px solid rgb(87, 178, 253);
             padding: 12px 28px;
-            color: coral;
+            color: rgb(61, 114, 228);
+            gap: 3px;
             font-weight: bold;
             font-size: 16px;
             cursor: pointer;
@@ -181,29 +187,18 @@
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
 
-        .botao:hover {
-            background-color: coral;
-            color: antiquewhite;
-            transform: translateY(-3px);
-            box-shadow: 0 7px 14px rgba(253, 178, 87, 0.25);
-        }
-
-        .botao:active {
-            transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(253, 178, 87, 0.15);
-        }
-
         .IMC {
-            background-color: rgb(228, 196, 159);
+            background-color: #caf8ff;
             display: flex;
             align-items: center;
             gap: 12px;
             border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-left: 2.5%;
-            margin-right: 2.5%;
             transition: transform 0.3s ease;
+            color: rgb(67, 130, 137);
+            margin-right: 2.5%;
+            margin-left: 2.5%;
         }
 
         .IMC:hover {
@@ -211,20 +206,23 @@
         }
 
         .Cur {
-            background-color: rgb(228, 196, 159);
+            background-color:#95dae2;
             display: flex;
             align-items: center;
             border-radius: 15px;
             margin-top: 5px;
             margin-bottom: 5px;
+            margin-right: 2.5%;
+            margin-left: 2.5%;
             border-color: brown;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease;
+            width: 95%;
         }
 
         .Cur:hover {
             transform: translateY(-5px);
-            color: rgb(90, 50, 26);
-            background-color: rgb(211, 179, 143);
+            color: rgb(103, 162, 168);
+            background-color: rgb(250, 250, 250);
             zoom: 115%;
         }
 
@@ -236,18 +234,22 @@
             transform: translate3d(0px, 10px, 0px);
             zoom: 110%;
         }
+        .botao:hover {
+            transform: translate3d(0px, 10px, 0px);
+            background-color: #91dce7;
+            zoom: 110%;
+        }
 
         .k {
-            background-color: rgb(228, 196, 159);
+            background-color: #caf8ff;
             display: flex;
             align-items: center;
             gap: 12px;
             border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-left: 2.5%;
-            margin-right: 2.5%;
             transition: transform 0.3s ease;
+            color: rgb(67, 130, 137);;
         }
 
         .Titulo span {
@@ -255,15 +257,21 @@
             animation: mudaCor 3.0s infinite linear;
             animation-delay: calc(var(--i) * 0.4s);
         }
-        .botao span {
-            color: hsl(29, 86%, 43%);
-            animation: mudaCor 3.0s infinite linear;
-            animation-delay: calc(var(--i) * 0.4s);
+        .ToSemCriatividade{
+            width: 100%;
         }
 
         @keyframes mudaCor {
-            0%, 100% { color: coral; }
-            50% { color: #72378a; }
+
+            0%,
+            100% {
+                color: #3d8b99;
+            }
+
+            50% {
+                color: rgb(240, 240, 240);
+
+            }
         }
     </style>
 </head>
@@ -286,7 +294,7 @@
 
         <div class="IMC">
             <div class="FotoImc">
-                <img class="imgCortisol" src="Imgs/IMC.png">
+                <img class="imgCortisol" src="imagens/IMC.png">
             </div>
             <div class="text">
                 <h2>
@@ -314,7 +322,7 @@
 
         <div class="k">
             <div class="FotoCalorias">
-                <img class="imgCaloria" src="Imgs/kcal.png">
+                <img class="imgCaloria" src="imagens/kcal.png">
             </div>
             <div class="text">
                 <h2><a class="deste" href="PI.html"> Calorias Perdidas </a></h2>
@@ -331,9 +339,9 @@
 
             <h1>Curiosidades</h1>
             <div class="Cur">
-                <h3> corpo humano é uma máquina cheia de processos surpreendentes. Aqui estão algumas curiosidades
-                    fascinantes
-                    sobre o funcionamento e os limites da nossa saúde física:</h3>
+                <h3> Corpo Humano é Uma Máquina Cheia de Processos Surpreendentes. Aqui Estão Algumas Curiosidades
+                    Fascinantes
+                    Sobre o Funcionamento e os Limites da Nossa Saúde Física:</h3>
             </div>
             <div class="Cur">
                 <p>Músculo mais forte: O masseter, responsável pela mastigação, é o músculo mais forte do corpo
@@ -372,7 +380,7 @@
         </div>
     </div>
 
-    <div class="botaoContent">
+     <div class="botaoContent">
         <a class="botao" href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil" target="_blank">
             <span class="--i:1">Clique</span> 
             <span class="--i:2">Aqui </span>
@@ -382,7 +390,6 @@
             <span class="--i:6">De</span> 
             <span class="--i:7">Saúde</span>
         </a>
-    </div>
     </div>
 </body>
 

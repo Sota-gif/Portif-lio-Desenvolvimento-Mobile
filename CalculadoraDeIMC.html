@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: #ddba8d;
+            background-color: #9cd1df;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,7 +19,7 @@
         }
 
         .secao {
-            background: rgb(255, 220, 180);
+            background: #caf8ff;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@
             width: 100%;
             padding: 12px;
             margin: 8px 0;
-            border: 1px solid #f3c9a7;
+            border: 1px solid #81cde2;
             border-radius: 6px;
             box-sizing: border-box;
             font-size: 1rem;
@@ -63,19 +63,20 @@
         }
 
         .btn-calc {
-            background-color: #a17543;
-            color: rgb(226, 192, 147);
+            background-color:  #9cd1df;
+            color: #000000;
+            border: 1px solid #81cde2;
         }
 
         .btn-voltar {
-            background-color: #a17543;
-            border: 1px solid rgb(226, 192, 147);
+            background-color:  #9cd1df;
+            border: 1px solid #81cde2;
             padding: 0;
         }
 
         .btn-voltar a {
             text-decoration: none;
-            color: #d3ae95;
+            color: #000000;
             display: block;
             padding: 14px;
         }
@@ -105,10 +106,31 @@
 
             .genero {
                 display: flex;
-                align-items: center;
-                flex-direction: column;
+                flex-direction: row;
                 gap: 10px;
                 margin-top: 15px;
+            }
+
+            .masculino{
+                background-color: #ffffff;
+                color: rgb(28, 101, 160);
+                border: 1px solid #81cde2;
+            }
+
+            .masculino:hover{
+                transform: translateY(-5px);
+                background-color: #9cd1df;
+            }
+
+            .feminino{
+                background-color:  #ffffff;
+                color: rgb(210, 142, 212);
+                border: 1px solid #81cde2;
+            }
+
+            .feminino:hover{
+                transform: translateY(-5px);
+                background-color: #755791;
             }
         }
     </style>
@@ -119,8 +141,8 @@
         <h3>Calculadora de IMC</h3>
         <p>Qual Seu Gênero?</p>
         <div class="genero">
-            <button>Masculino</button>
-            <button>Feminino</button>
+            <button class="masculino">Masculino</button>
+            <button class="feminino">Feminino</button>
         </div>
         <p>Qual Sua Idade?</p>
         <input type="number" placeholder="Exemplo = 35 anos">

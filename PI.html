@@ -10,10 +10,10 @@
       padding: 20px;
       max-width: 800px; 
       margin: auto; 
-      background-color: #76e0cb;
+      background-color: #9cd1df;
     }
     .container {
-      background: rgb(139, 211, 223);
+      background: #caf8ff;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 6px rgba(4, 63, 9, 0.1);
@@ -27,18 +27,18 @@
       width: 100%; 
       box-sizing: border-box; 
       border-radius: 6px;
-      border: 1px solid #69a8b8;
+      border: 1px solid  #95dae2;
     }
     
     button { 
       cursor: pointer; 
-      background: #7c9bb8; 
-      color: rgb(84, 207, 191); 
+      background: #9cd1df;; 
+      color: rgb(0, 0, 0); 
       border: none; 
       font-weight: bold;
     }
     
-    button:hover { background: #82b1cf; }
+    button:hover { background: #95dae2; }
 
     table { 
       width: 100%; 
@@ -47,7 +47,7 @@
     }
     
     th, td { 
-      border: 1px solid #b4ffda; 
+      border: 1px solid  #95dae2; 
       padding: 12px; 
       text-align: center; 
     }
@@ -57,21 +57,33 @@
     .secao {
       margin-bottom: 20px; 
       padding: 15px;
-      border: 1px solid #627892;
+      border: 1px solid   #95dae2;
+      border-radius: 8px;
+    }
+    .secao1 {
+      margin-bottom: 20px; 
+      padding: 15px;
+      border: 1px solid  #95dae2;
+      border-radius: 8px;
+    }
+    .secao2 {
+      margin-bottom: 20px; 
+      padding: 15px;
+      border: 1px solid  #95dae2;
       border-radius: 8px;
     }
 
     .volte {
       margin-top: 20px;
       text-align: center;
-      background-color: cadetblue;
+      background-color: #95dae2;
       padding: 15px;
       border-radius: 15px;
     }
 
     .volte a {
       text-decoration: none;
-      color: rgb(209, 253, 212);
+      color: #15535d;
       font-weight: bold;
       transition: 0.3s;
       display: inline-block;
@@ -79,7 +91,7 @@
 
     .desta:hover {
       transform: scale(1.1);
-      color: #063066;
+      color:  #425c5f;
     }
 
     .resumo-hoje {
@@ -102,12 +114,12 @@
     <button onclick="registrarAtividade()">Registrar Atividade</button>
   </div>
 
-  <div class="secao">
+  <div class="secao1">
     <button onclick="mostrarCalorias()">Calcular Total de Hoje</button>
     <p id="resultadoCalorias" class="resumo-hoje"></p>
   </div>
 
-  <div class="secao">
+  <div class="secao2">
     <button onclick="mostrarEvolucao()">Ver Histórico Completo</button>
     <div id="evolucao"></div>
   </div>
